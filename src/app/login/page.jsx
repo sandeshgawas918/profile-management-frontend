@@ -48,7 +48,7 @@ const page = () => {
                 <div className=' text-center md:w-[400px] p-7 border rounded-lg flex flex-col gap-5 mt-5 shadow-lg'>
                     <div className="text-3xl text-green-600 font-bold">Login Here</div>
                     <input value={email} onChange={(e) => { setemail(e.target.value) }} type="text" placeholder='enter your email' className=' p-3 text-black rounded-xl font-semibold' />
-                    <input value={password} onChange={(e) => { setpassword(e.target.value) }} type="text" placeholder='enter password' className=' p-3 text-black rounded-xl font-semibold' />
+                    <input value={password} onChange={(e) => { setpassword(e.target.value) }} type="password" placeholder='enter password' className=' p-3 text-black rounded-xl font-semibold' />
                     <button onClick={validateUser} className=" bg-green-600 px-5 p-2 rounded-md">Login</button>
                     <Link href='/' className=" bg-yellow-600 px-5 p-2 rounded-md">Home</Link>
                 </div>
