@@ -16,7 +16,7 @@ const page = () => {
 
     const validateUser = async (e) => {
         e.preventDefault()
-        let user = await axios.post('http://localhost:7000/api/login', { email, password })
+        let user = await axios.post('https://profile-management-backend-y2v8.onrender.com/api/login', { email, password })
             .then((res) => {
                 console.log(res);
                 // setemail('')

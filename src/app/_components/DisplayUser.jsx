@@ -7,7 +7,7 @@ import React from 'react'
 const DisplayUser = ({users}) => {
     const deleteUser = async (id) => {
         console.log(id);
-        const deletedUser = await axios.delete(`http://localhost:7000/api/delete/${id}`)
+        const deletedUser = await axios.delete(`https://profile-management-backend-y2v8.onrender.com/api/delete/${id}`)
         console.log(deletedUser);
     }
     return (

@@ -17,7 +17,7 @@ const page = () => {
   const [icon, seticon] = useState('')
 
   const displayUser = async () => {
-    await axios.get(`http://localhost:7000/api/getUser/${params.id}`)
+    await axios.get(`https://profile-management-backend-y2v8.onrender.com/api/getUser/${params.id}`)
       .then((res) => {
         setuser(res.data);
         setname(res.data.name);

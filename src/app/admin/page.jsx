@@ -12,7 +12,7 @@ const page = () => {
     const [users, setusers] = useState('')
 
     const getAllUsers = async () => {
-        await axios.get('http://localhost:7000/api/fetchUsers')
+        await axios.get('https://profile-management-backend-y2v8.onrender.com/api/fetchUsers')
             .then((res) => {
                 setusers(res.data)
             })

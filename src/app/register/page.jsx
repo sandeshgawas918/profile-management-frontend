@@ -16,7 +16,7 @@ const page = () => {
 
     const registerUser = async (e) => {
         e.preventDefault()
-        let user = await axios.post('http://localhost:7000/api/register', { name, email, mobile, icon, password })
+        let user = await axios.post('https://profile-management-backend-y2v8.onrender.com/api/register', { name, email, mobile, icon, password })
             .then((res) => {
                 console.log(res);
                 setemail('')
