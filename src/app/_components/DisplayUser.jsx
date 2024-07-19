@@ -28,7 +28,7 @@ const DisplayUser = ({users}) => {
                                 <p ><span className=' font-semibold text-[18px]'>Email :</span > {item.email}</p>
                                 <p ><span className=' font-semibold text-[18px]'>Mobile :</span > {item.mobile}</p>
                             </div>
-                            <div className='flex flex-row gap-5 justify-end'>
+                            <div className='flex flex-row gap-5 justify-end mt-2'>
                                 <Link href={`/profile/${item._id}`} className=' flex flow-row gap-3'> <FilePenLine className=' text-blue-600' /></Link>
                                 <button onClick={() => { deleteUser(item._id) }} className=' flex flow-row gap-3'> <Trash2Icon className=' text-red-600' /></button>
                             </div>

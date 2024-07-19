@@ -34,7 +34,7 @@ const page = () => {
   const updateUser = async (id) => {
     // e.preventDefault()
     console.log(id);
-    await axios.put(`http://localhost:7000/api/updateUser/${params.id}`, { name, email, mobile, icon, lname })
+    await axios.put(`https://profile-management-backend-y2v8.onrender.com/api/updateUser/${params.id}`, { name, email, mobile, icon, lname })
       .then((res) => {
         console.log(res);
       })
