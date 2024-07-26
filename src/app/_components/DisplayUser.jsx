@@ -3,15 +3,19 @@ import { FilePenLine, Trash2Icon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const DisplayUser = ({users}) => {
+const DisplayUser = ({ users }) => {
     const deleteUser = async (id) => {
         console.log(id);
         const deletedUser = await axios.delete(`https://profile-management-backend-y2v8.onrender.com/api/delete/${id}`)
+        toast.warn('User has been deleted')
         console.log(deletedUser);
     }
     return (
         <div>
+            <ToastContainer />
             <div className=' grid grid-cols-1 md:grid-cols-4 gap-16 mx-10 my-7 md:m-20 md:px-20'>
                 {
                     users && users.map((item, index) => (
