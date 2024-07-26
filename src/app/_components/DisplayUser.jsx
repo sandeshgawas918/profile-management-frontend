@@ -7,7 +7,7 @@ import React from 'react'
 const DisplayUser = ({users}) => {
     const deleteUser = async (id) => {
         console.log(id);
-        const deletedUser = await axios.delete(`https://profile-management-backend-y2v8.onrender.com/api/delete/${id}`)
+        const deletedUser = await axios.delete(`${process.env.NEXT_PUBLIC_API_KEY}/api/delete/${id}`)
         console.log(deletedUser);
     }
     return (
@@ -18,7 +18,7 @@ const DisplayUser = ({users}) => {
                         <div key={item._id} className=' grid border p-5 rounded-xl shadow-xl'>
                             <div className=' flex flex-col md:gap-4'>
                                 <Image
-                                    src={item.icon || 'https://cdn-icons-png.flaticon.com/512/801/801121.png'}
+                                    src={item.icon}
                                     width={300}
                                     height={100}
                                     alt='img'

@@ -6,6 +6,8 @@ import Link from 'next/link'
 import { redirect, useRouter } from 'next/navigation'
 import { Router } from 'next/router'
 import React, { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const page = () => {
 
@@ -16,31 +18,29 @@ const page = () => {
 
     const validateUser = async (e) => {
         e.preventDefault()
-        let user = await axios.post('https://profile-management-backend-y2v8.onrender.com/api/login', { email, password })
+        let user = await axios.post(`${process.env.NEXT_PUBLIC_API_KEY}/api/login`, { email, password })
             .then((res) => {
                 console.log(res);
-                // setemail('')
-                // setpassword('')
 
                 if (res.status == 200) {
-                    console.log('if res success');
+                    // console.log('if res success');
+                    toast.success('Logged in successfully...')
                     router.push(`/profile/${res.data._id}`)
-                    // console.log('sandesh data',res.data);
-                    // localStorage.setItem('name','sandesh')
                 }
                 else {
-                    console.log('if res not success');
-                    alert('wrong credential')
+                    // console.log('if res not success');
+                    toast.error('Wrong credentials, please try again.')
                 }
             })
             .catch((err) => {
-                console.log('error on login route - nextapp -', err);
-                alert('wrong credential')
+                console.log('Error on login route (nextJS) : ', err);
+                toast.error('Wrong credentials, please try again.')
             })
     }
 
     return (
-        <div className='h-screen'>
+        <div className=''>
+            <ToastContainer />
             <button className=' m-5 p-2 bg-red-500 rounded-lg'>
                 <Link href='/' className='px-5 flex flex-row gap-1'> <ArrowBigLeftDash /> Back</Link>
             </button>

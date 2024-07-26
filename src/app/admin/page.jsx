@@ -12,12 +12,12 @@ const page = () => {
     const [users, setusers] = useState('')
 
     const getAllUsers = async () => {
-        await axios.get('https://profile-management-backend-y2v8.onrender.com/api/fetchUsers')
+        await axios.get(`${process.env.NEXT_PUBLIC_API_KEY}/api/fetchUsers`)
             .then((res) => {
                 setusers(res.data)
             })
             .catch((err) => {
-                console.log('error on admin page', err);
+                console.log('Error on admin page (NextJS) : ', err);
             })
     }
 
