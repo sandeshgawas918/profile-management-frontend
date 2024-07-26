@@ -27,7 +27,7 @@ const page = () => {
     formData.append("icon", icon);
     formData.append("lname", lname);
     let user = await axios
-      .post(`${process.env.NEXT_PUBLIC_API_KEY}/api/register`, formData, {
+      .post(`https://profile-management-backend-y2v8.onrender.com/api/register`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

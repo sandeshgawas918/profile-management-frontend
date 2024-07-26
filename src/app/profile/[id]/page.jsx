@@ -22,7 +22,7 @@ const page = () => {
 
   const displayUser = async () => {
     await axios
-      .get(`${process.env.NEXT_PUBLIC_API_KEY}/api/getUser/${params.id}`)
+      .get(`https://profile-management-backend-y2v8.onrender.com/api/getUser/${params.id}`)
       .then((res) => {
         setuser(res.data);
         setname(res.data.name);
@@ -46,7 +46,7 @@ const page = () => {
     formData.append("icon", icon);
 
     try {
-      const response = await axios.put(`${process.env.NEXT_PUBLIC_API_KEY}/api/updateUser/${params.id}`, formData, {
+      const response = await axios.put(`https://profile-management-backend-y2v8.onrender.com/api/updateUser/${params.id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
